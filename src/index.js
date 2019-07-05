@@ -8,7 +8,8 @@ class App extends React.Component {
         super(props);
         this.state = {
             quote: QUOTES[1],
-            author: AUTHORS[1]
+            author: AUTHORS[1],
+            color: ''
         };
 
         this.getQuote = this.getQuote.bind(this);
@@ -17,9 +18,12 @@ class App extends React.Component {
     // generate and set random quote
     getQuote = () => {
         let randomNumber = this.getRandomNumber();
+        let randomColor = '#'+Math.random().toString(16).substr(-6); 
+        console.log(randomColor);
         this.setState({
             quote: QUOTES[randomNumber],
-            author: AUTHORS[randomNumber]
+            author: AUTHORS[randomNumber],
+            color: randomColor
         });
     }
 
@@ -28,14 +32,14 @@ class App extends React.Component {
     
     render() {
         return (
-            <div id="container">
+            <div id="container" class="container" style={{background: 'grey'}}>
                 <div id="quote-box">
                     <div id="text"><h4>{this.state.quote}</h4></div>
                     <div id="author">{this.state.author}</div>
                     <br />                    
                     <button type="button" class="btn btn-outline-primary" id="new-quote" onClick={this.getQuote}>New Quote</button>
                     <a id="tweet-quote" class="btn btn-outline-secondary" href="http://www.twitter.com/intent/tweet">Tweet Quote</a>
-                    <text value={this.state.quote}></text>
+                    <br />
                 </div>
             </div>
         )
