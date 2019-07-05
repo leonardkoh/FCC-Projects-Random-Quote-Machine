@@ -7,36 +7,35 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            quote: '',
-            author: ''
+            quote: QUOTES[1],
+            author: AUTHORS[1]
         };
 
         this.getQuote = this.getQuote.bind(this);
     }
-    // random number between 0 and 103
-    getRandomNumber = () => { return  Math.floor((Math.random() * 103) + 1); } 
-
+    
+    // generate and set random quote
     getQuote = () => {
         let randomNumber = this.getRandomNumber();
-        // this.setState({
-        //     quote: QUOTES[randomNumber],
-        //     author: AUTHORS[randomNumber]
-        // });
         this.setState({
-            quote: QUOTES[7],
+            quote: QUOTES[randomNumber],
+            author: AUTHORS[randomNumber]
         });
     }
 
+    // random number between 0 and 103
+    getRandomNumber = () => { return  Math.floor((Math.random() * 103) + 1); } 
+    
     render() {
-        console.log(QUOTES[this.getRandomNumber()]);
         return (
             <div id="container">
                 <div id="quote-box">
-                    <div id="text">{QUOTES[this.getRandomNumber()]}</div>
-                    <div id="author">The Author</div>
-                    <button id="new-quote">Button</button>
-                    <button><a id="tweet-quote">Tweet Quote</a></button>
-                    <input value={this.state.quote}></input>
+                    <div id="text"><h4>{this.state.quote}</h4></div>
+                    <div id="author">{this.state.author}</div>
+                    <br />                    
+                    <button type="button" class="btn btn-outline-primary" id="new-quote" onClick={this.getQuote}>New Quote</button>
+                    <a id="tweet-quote" class="btn btn-outline-secondary" href="http://www.twitter.com/intent/tweet">Tweet Quote</a>
+                    <text value={this.state.quote}></text>
                 </div>
             </div>
         )
