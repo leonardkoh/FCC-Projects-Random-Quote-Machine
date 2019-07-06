@@ -3,8 +3,12 @@
 #container {
   font-family: 'Raleway', sans-serif;
   text-align: center;
+  height: 100vw;
 }
 
-/* button:hover {
-  display: none;
-} */
+#quote-box {
+  /* position:absolute; */
+  padding: 2% 
+  /* border: solid 0.2vw gray; */
+  /* width: 50%; */
+}
