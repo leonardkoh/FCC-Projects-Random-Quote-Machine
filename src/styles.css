@@ -7,8 +7,17 @@
 }
 
 #quote-box {
-  /* position:absolute; */
-  padding: 2% 
-  /* border: solid 0.2vw gray; */
-  /* width: 50%; */
+  padding: 3%;
+  text-align: justify;
+  margin: auto;
+  background-color: 'green' !important;
+  width: 50%;
+}
+
+#spacer {
+  height: 10vw
+}
+
+#author {
+  text-align: right;
 }
