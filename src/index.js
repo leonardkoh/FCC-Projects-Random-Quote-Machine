@@ -14,7 +14,6 @@ class App extends React.Component {
         this.getQuote = this.getQuote.bind(this);
     }
     
-    // generate and set random quote
     getQuote = () => {
         let randomNumber = this.getRandomNumber();
         this.setState({
@@ -23,16 +22,14 @@ class App extends React.Component {
         });
     }
 
-    // random number between 0 and 103
     getRandomNumber = () => { return  Math.floor((Math.random() * 103) + 1); }
-    
+
     render() {
         const randomColor = '#'+Math.random().toString(16).substr(-6);
         const randomBgColor = {background: randomColor}; 
         const randomTextColor = {color: randomColor};
         const btnBorder = {color: randomColor, border: '2px solid', borderColor: randomColor};
-        // const myButtonClass = {myButtonClass: {'&:hover': {textDecoration: 'underline'}}};
-        
+
         return (
             <div id="container" className="container-fluid" style={randomBgColor}>
                 <div id="spacer"></div>
