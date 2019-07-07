@@ -14,4 +14,9 @@ Tasks Required:
 <li>User Story #11: The #quote-box wrapper element should be horizontally centered. Please run tests with browser's zoom level at 100% and page maximized.</li>
 </ul>
 
+To Do:
+- Style change on Button Hover
+- Smooth transition between frames
+- More social sharing links
+
 Deployed on: http://lk-quote-generator.netlify.com
